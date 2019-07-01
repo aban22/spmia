@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.thoughtmechanix.spmialicensingservice.model.License;
+import com.thoughtmechanix.spmialicensingservice.resource.LicenseResource;
 import com.thoughtmechanix.spmialicensingservice.services.LicenseService;
 
 import lombok.AllArgsConstructor;
@@ -23,7 +24,7 @@ public class LicenseServiceController {
 	}
 	
 	@GetMapping("/{licenseId}/{clientType}")
-	public License getLicensesWithClient(@PathVariable("organizationId") String organizationId, @PathVariable("licenseId") String licenseId, @PathVariable("clientType") String clientType) {
+	public LicenseResource getLicensesWithClient(@PathVariable("organizationId") String organizationId, @PathVariable("licenseId") String licenseId, @PathVariable("clientType") String clientType) {
 		return licenseService.getLicense(organizationId, licenseId, clientType);
 	}
 }
