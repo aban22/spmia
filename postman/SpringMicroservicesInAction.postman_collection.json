@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "5264b66b-faf1-423b-808f-25c4105953cf",
+		"name": "SpringMicroservicesInAction",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetLicenses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/organizations/e254f8c-c442-4ebe-a82a-e2fc1d1ff78a/licenses/f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"organizations",
+						"e254f8c-c442-4ebe-a82a-e2fc1d1ff78a",
+						"licenses",
+						"f3831f8c-c338-4ebe-a82a-e2fc1d1ff78a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check Health Licensing Service",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/actuator/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Configuration Server properties",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/spmia-licensing-service/dev",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"spmia-licensing-service",
+						"dev"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh Properties Licensing Service",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/actuator/refresh",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getLicensesWithClient - feign",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/organizations/442adb6e-fa58-47f3-9ca2-ed1fecdfe86c/licenses/08dbe05-606e-4dad-9d33-90ef10e334f9/feign",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"organizations",
+						"442adb6e-fa58-47f3-9ca2-ed1fecdfe86c",
+						"licenses",
+						"08dbe05-606e-4dad-9d33-90ef10e334f9",
+						"feign"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getLicensesWithClient - rest",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/organizations/442adb6e-fa58-47f3-9ca2-ed1fecdfe86c/licenses/08dbe05-606e-4dad-9d33-90ef10e334f9/rest",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"organizations",
+						"442adb6e-fa58-47f3-9ca2-ed1fecdfe86c",
+						"licenses",
+						"08dbe05-606e-4dad-9d33-90ef10e334f9",
+						"rest"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getLicensesWithClient - discovery",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/organizations/442adb6e-fa58-47f3-9ca2-ed1fecdfe86c/licenses/08dbe05-606e-4dad-9d33-90ef10e334f9/discovery",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"organizations",
+						"442adb6e-fa58-47f3-9ca2-ed1fecdfe86c",
+						"licenses",
+						"08dbe05-606e-4dad-9d33-90ef10e334f9",
+						"discovery"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
