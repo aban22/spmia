@@ -2,8 +2,15 @@ package com.thoughtmechanix.spmialicensingservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
 
+@EnableFeignClients
+@EnableDiscoveryClient
 @RefreshScope
 @SpringBootApplication
 public class Application {
@@ -12,4 +19,9 @@ public class Application {
 		SpringApplication.run(Application.class, args);
 	}
 
+	@LoadBalanced
+	@Bean
+	public RestTemplate getRestTemplate() {
+		return new RestTemplate();
+	}
 }

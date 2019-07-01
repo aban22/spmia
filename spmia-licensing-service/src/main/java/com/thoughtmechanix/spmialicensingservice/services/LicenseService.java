@@ -23,6 +23,12 @@ public class LicenseService {
 		license.setComment(serviceConfig.getExampleProperty());
 		return license;
 	}
+	
+	public License getLicense(String organizationId, String licenseId, String clientType) {
+		License license = licenseRepository.findByOrganizationIdAndLicenseId(organizationId, licenseId);
+		license.setComment(serviceConfig.getExampleProperty());
+		return license;
+	}
 
 	public List<License> getLicensesByOrg(String organizationId) {
 		return licenseRepository.findByOrganizationId(organizationId);

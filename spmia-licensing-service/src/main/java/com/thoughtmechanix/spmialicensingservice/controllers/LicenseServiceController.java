@@ -6,18 +6,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.thoughtmechanix.spmialicensingservice.model.License;
+import com.thoughtmechanix.spmialicensingservice.services.LicenseService;
 
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
 @RestController
 @RequestMapping("/v1/organizations/{organizationId}/licenses")
 public class LicenseServiceController {
 
+	private final LicenseService licenseService;
+	
 	@GetMapping("/{licenseId}")
 	public License getLicenses(@PathVariable("organizationId") String organizationId, @PathVariable("licenseId") String licenseId) {
-		return License.builder()
-				.licenseId(licenseId)
-				.productName("Teleco")
-				.licenseType("Seat")
-				.organizationId("TestOrg")
-				.build();
+		return licenseService.getLicense(organizationId, licenseId);
+	}
+	
+	@GetMapping("/{licenseId}/{clientType}")
+	public License getLicensesWithClient(@PathVariable("organizationId") String organizationId, @PathVariable("licenseId") String licenseId, @PathVariable("clientType") String clientType) {
+		return licenseService.getLicense(organizationId, licenseId, clientType);
 	}
 }
