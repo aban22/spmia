@@ -116,7 +116,13 @@
 			"name": "getLicensesWithClient - rest",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "tmx-correlation-id",
+						"value": "TEST-CORRELATION-ID",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "http://localhost:8080/v1/organizations/442adb6e-fa58-47f3-9ca2-ed1fecdfe86c/licenses/08dbe05-606e-4dad-9d33-90ef10e334f9/rest",
 					"protocol": "http",
@@ -155,6 +161,70 @@
 						"licenses",
 						"08dbe05-606e-4dad-9d33-90ef10e334f9",
 						"discovery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getOrganization",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8100/v1/organizations/442adb6e-fa58-47f3-9ca2-ed1fecdfe86c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8100",
+					"path": [
+						"v1",
+						"organizations",
+						"442adb6e-fa58-47f3-9ca2-ed1fecdfe86c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getOrganization from zuul",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5555/api/organization/v1/organizations/442adb6e-fa58-47f3-9ca2-ed1fecdfe86c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"api",
+						"organization",
+						"v1",
+						"organizations",
+						"442adb6e-fa58-47f3-9ca2-ed1fecdfe86c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show zuul routes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5555/actuator/routes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"actuator",
+						"routes"
 					]
 				}
 			},
