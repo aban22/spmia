@@ -113,7 +113,7 @@
 			"response": []
 		},
 		{
-			"name": "getLicensesWithClient - rest",
+			"name": "getLicensesWithClient - rest - from zuul",
 			"request": {
 				"method": "GET",
 				"header": [
@@ -225,6 +225,32 @@
 					"path": [
 						"actuator",
 						"routes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Licenses from zuul",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5555/api/spmia-licensing-service/v1/organizations/442adb6e-fa58-47f3-9ca2-ed1fecdfe86c/licenses/08dbe05-606e-4dad-9d33-90ef10e334f9/rest",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"api",
+						"spmia-licensing-service",
+						"v1",
+						"organizations",
+						"442adb6e-fa58-47f3-9ca2-ed1fecdfe86c",
+						"licenses",
+						"08dbe05-606e-4dad-9d33-90ef10e334f9",
+						"rest"
 					]
 				}
 			},
