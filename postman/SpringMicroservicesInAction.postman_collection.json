@@ -170,7 +170,40 @@
 			"name": "getOrganization",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 0d15a657-8ecc-4bca-b062-9396953d26b3",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8100/v1/organizations/442adb6e-fa58-47f3-9ca2-ed1fecdfe86c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8100",
+					"path": [
+						"v1",
+						"organizations",
+						"442adb6e-fa58-47f3-9ca2-ed1fecdfe86c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Organization",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer 0d15a657-8ecc-4bca-b062-9396953d26b3"
+					}
+				],
 				"url": {
 					"raw": "http://localhost:8100/v1/organizations/442adb6e-fa58-47f3-9ca2-ed1fecdfe86c",
 					"protocol": "http",
@@ -251,6 +284,154 @@
 						"licenses",
 						"08dbe05-606e-4dad-9d33-90ef10e334f9",
 						"rest"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create token for USER",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "thisissecret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "eagleeye",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "webclient",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "john.carnell",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8901/auth/oauth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8901",
+					"path": [
+						"auth",
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create token for ADMIN",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "thisissecret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "eagleeye",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "webclient",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "william.woodward",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8901/auth/oauth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8901",
+					"path": [
+						"auth",
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Info",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjI2NjMzODEsInVzZXJfbmFtZSI6IndpbGxpYW0ud29vZHdhcmQiLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIiwiUk9MRV9VU0VSIl0sImp0aSI6ImRjODEyNDY4LTFjMzEtNGU1ZS05MTYwLTJlZjkxOTc3N2YyZiIsImNsaWVudF9pZCI6ImVhZ2xlZXllIiwic2NvcGUiOlsid2ViY2xpZW50Il19.TwPxV_RbjZBA-ce4Wl85oSX4N3LIxpYW_q_s7aux7QKknXj_gXpvzALrt4Qi8cXBkvs0xPgP_oXaqjtcOBZUHJz4UOgbjT2Gc4R_R2K5Op-Ot3Fd_fGvq2l8lpMTNmyEBwHDVZcmNBWawrIizRuoBUMgyl8tPO_Tz1lixyGr4RS7OUT7S5ftXZl8DbsXIwLrVIsQ76btByTNwdlX1_U0Y4qnQ2asPQ_SpeRZ6WoW23kCb9jVpbRrZ-zOdP6tP12LEdSEFQTU0JHKZc3gcvsoSl6YiNcnUooqpzbyzx4uIrB0C6xVrECzyAju3l9ih52_dEkzTrcKF1c2cs8BrAERDA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8901/auth/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8901",
+					"path": [
+						"auth",
+						"user"
 					]
 				}
 			},
