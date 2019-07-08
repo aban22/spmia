@@ -15,7 +15,9 @@ import com.thoughtmechanix.spmiaorganizationservice.model.Organization;
 import com.thoughtmechanix.spmiaorganizationservice.services.OrganizationService;
 
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @AllArgsConstructor
 @RestController
 @RequestMapping("v1/organizations")
@@ -40,7 +42,8 @@ public class OrganizationServiceController {
 
 	@DeleteMapping("/{organizationId}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void deleteOrganization(@PathVariable("organizationId") String organizationId, @RequestBody Organization organization) {
-		organizationService.deleteOrganization(organization);
+	public void deleteOrganization(@PathVariable("organizationId") String organizationId) {
+		log.info("deleteOrganization Data IN => organizationId: {}", organizationId);
+//		organizationService.deleteOrganization(organization);
 	}
 }
